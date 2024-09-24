@@ -53,3 +53,6 @@ eval "$(zoxide init zsh)"
 # The F*ck
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+
+# Fzf
+source <(fzf --zsh)

@@ -5,11 +5,28 @@ TARGET_DIR="$HOME"
 NVIM_CONFIG_REPO="git@github.com:SharliBeicon/nvBacon.git"
 NVIM_CONFIG_DIR="$DOTFILES_DIR/nvim/.config/nvim"
 
+if ! command -v brew &> /dev/null; then
+    echo "Homebrew is not installed. Please install Homebrew first."
+    exit 1
+fi
+
 echo "Updating Homebrew..."
 brew update
 
-echo "Installing Stow, Alacritty, Zellij, and Neovim..."
-brew install stow alacritty zellij neovim
+packages=(stow alacritty zellij neovim powerlevel10k zoxide thefuck fzf pnpm)
+
+is_installed() {
+    brew list --formula | grep -q "^$1$"
+}
+
+for package in "${packages[@]}"; do
+    if ! is_installed "$package"; then
+        echo "Installing $package..."
+        brew install "$package"
+    else
+        echo "$package is already installed."
+    fi
+done
 
 if [ ! -d "$NVIM_CONFIG_DIR" ]; then
     echo "Cloning Neovim config from $NVIM_CONFIG_REPO into $NVIM_CONFIG_DIR..."
