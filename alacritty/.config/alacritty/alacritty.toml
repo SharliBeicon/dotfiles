@@ -2,7 +2,7 @@ import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
 
 [shell]
 program = "/bin/zsh"
-args = ["-l", "-c", "zellij run -- macchina -o host -o processor-load -o gpu -o disk-space -o memory -o battery -o uptime"]
+args = ["-l", "-c", "zellij"]
 
 [cursor]
 style = "Block"
