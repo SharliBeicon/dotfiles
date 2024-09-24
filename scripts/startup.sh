@@ -3,7 +3,7 @@
 DOTFILES_DIR="$HOME/dotfiles"
 TARGET_DIR="$HOME"
 NVIM_CONFIG_REPO="git@github.com:SharliBeicon/nvBacon.git"
-NVIM_CONFIG_DIR="$DOTFILES_DIR/nvim"
+NVIM_CONFIG_DIR="$DOTFILES_DIR/nvim/.config/nvim"
 
 echo "Updating Homebrew..."
 brew update
@@ -24,16 +24,15 @@ setup_dotfiles() {
     TARGET_DIR="$2"
 
     echo "Setting up dotfiles from $DOTFILES_DIR to $TARGET_DIR..."
-
     if [ ! -d "$DOTFILES_DIR" ]; then
         echo "Error: Directory $DOTFILES_DIR does not exist."
         exit 1
     fi
 
-    for folder in $(ls -d $DOTFILES_DIR/*(/)); do
+    for folder in $(ls -d $DOTFILES_DIR/*/); do
         folder_name=$(basename $folder)
         echo "Stowing $folder_name..."
-        stow --adopt --target="$TARGET_DIR" --dir="$DOTFILES_DIR" "$folder_name"
+        stow --target="$TARGET_DIR" --dir="$DOTFILES_DIR" "$folder_name"
     done
 }
 
