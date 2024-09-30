@@ -56,3 +56,4 @@ eval $(thefuck --alias fk)
 
 # Fzf
 source <(fzf --zsh)
+
