@@ -9,7 +9,7 @@ args = ["-l", "-c", "zellij"]
 style = "Block"
 
 [font]
-size = 15.0
+size = 16.0
 
 [font.normal]
 family = "MesloLGS Nerd Font"
