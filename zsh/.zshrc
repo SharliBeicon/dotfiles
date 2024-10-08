@@ -28,6 +28,7 @@ alias s="cd ~/Documents/DataBeacon/simplifid/"
 alias ss="cd ~/Documents/DataBeacon/simplifid-scenarios/"
 alias vim="nvim"
 alias awslogin="aws sso login --sso-session Databeacon"
+alias ls="eza"
 
 # proto
 export PROTO_HOME="$HOME/.proto";
@@ -57,3 +58,6 @@ eval $(thefuck --alias fk)
 # Fzf
 source <(fzf --zsh)
 
+#Autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(~/.local/bin/mise activate zsh)"
