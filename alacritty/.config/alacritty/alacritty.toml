@@ -12,16 +12,16 @@ style = "Block"
 size = 16.0
 
 [font.normal]
-family = "MesloLGS Nerd Font"
+family = "Iosevka Nerd Font"
 
 [font.bold]
-family = "MesloLGS Nerd Font"
+family = "Iosevka Nerd Font"
 
 [font.bold_italic]
-family = "MesloLGS Nerd Font"
+family = "Iosevka Nerd Font"
 
 [font.italic]
-family = "MesloLGS Nerd Font"
+family = "Iosevka Nerd Font"
 
 [window]
 startup_mode = "Maximized"
