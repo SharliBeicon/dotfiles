@@ -1,5 +1,4 @@
-# import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
-import = ["~/.config/alacritty/rose-pine.toml"]
+import = ["~/.config/alacritty/kanagawa_wave.toml"]
 
 [shell]
 program = "/bin/zsh"
