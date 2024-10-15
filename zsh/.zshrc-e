@@ -39,7 +39,8 @@ export RANCHER_HOME="$HOME/.rd";
 export PATH="$RANCHER_HOME/bin:$PATH";
 
 # haskell toolchain
-[ -f "/Users/charliebacon/.ghcup/env" ] && . "/Users/charliebacon/.ghcup/env" # ghcup-env
+export HASKELL_TOOLCHAIN="$HOME/.ghcup";
+export PATH="$HASKELL_TOOLCHAIN/bin:$PATH";
 
 . "$HOME/.cargo/env"
 
@@ -64,4 +65,3 @@ source <(fzf --zsh)
 #Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(~/.local/bin/mise activate zsh)"
-
