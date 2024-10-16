@@ -13,7 +13,7 @@ fi
 echo "Updating Homebrew..."
 brew update
 
-packages=(stow alacritty zellij neovim powerlevel10k zoxide thefuck fzf pnpm macchina zsh-autosuggestions)
+packages=(stow alacritty zellij neovim powerlevel10k zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab rust)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
