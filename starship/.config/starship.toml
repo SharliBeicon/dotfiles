@@ -1,12 +1,4 @@
-# A minimal left prompt
-format = """$directory
-$character"""
-
-# move the rest of the prompt to the right
-right_format = """$status$all"""
-
-# Inserts a blank line between shell prompts
-add_newline = true
+format = """$directory$status$all$character"""
 
 [character]
 success_symbol = "[❯](red)[❯](yellow)[❯](green)"

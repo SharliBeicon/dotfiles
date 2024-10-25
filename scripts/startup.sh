@@ -13,7 +13,7 @@ fi
 echo "Updating Homebrew..."
 brew update
 
-packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab rust starship notion-calendar)
+packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab rust starship notion-calendar btop)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
