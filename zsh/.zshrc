@@ -1,3 +1,6 @@
+# Starship
+eval "$(starship init zsh)"
+
 export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -27,10 +30,11 @@ export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 export RANCHER_HOME="$HOME/.rd";
 export PATH="$RANCHER_HOME/bin:$PATH";
 
+# Cargo installs
+. "$HOME/.cargo/env"
+
 # haskell toolchain
 [ -f "/Users/charliebacon/.ghcup/env" ] && . "/Users/charliebacon/.ghcup/env" # ghcup-env
-
-. "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/Users/charliebacon/Library/pnpm"
@@ -52,8 +56,3 @@ source <(fzf --zsh)
 
 #Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(~/.local/bin/mise activate zsh)"
-
-# Starship
-eval "$(starship init zsh)"
-
