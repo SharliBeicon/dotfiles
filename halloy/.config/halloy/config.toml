@@ -1,0 +1,8 @@
+[servers.oftc]
+nickname = "sharlibeicon"
+server = "irc.oftc.net"
+channels = ["#asahi", "#asahi-dev", "#asahi-stream"]
+
+[font]
+family = "Iosevka Nerd Font"
+size = 16

@@ -14,7 +14,7 @@ echo "Updating Homebrew..."
 brew update
 brew tap FelixKratz/formulae
 brew tap koekeishiya/formulae
-packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop sketchybar borders yabai skhd)
+packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
@@ -56,10 +56,4 @@ setup_dotfiles() {
 
 setup_dotfiles "$DOTFILES_DIR" "$TARGET_DIR"
 
-# sketchybar --start-service
-# brew services start borders
-# yabai --start-service
-# skhd --start-service
-
-chmod +x $HOME/.config/yabai/yabairc
 echo "Dotfiles setup complete!"
