@@ -30,6 +30,6 @@ padding.y = 1
 decorations = "Buttonless"
 
 [general]
-import = ["~/.config/alacritty/kanagawa_wave.toml"]
+import = ["~/.config/alacritty/rose-pine.toml"]
 
 [terminal]
