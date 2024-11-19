@@ -14,7 +14,7 @@ echo "Updating Homebrew..."
 brew update
 brew tap FelixKratz/formulae
 brew tap koekeishiya/formulae
-packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy)
+packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
