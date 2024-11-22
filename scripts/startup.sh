@@ -10,9 +10,19 @@ if ! command -v brew &> /dev/null; then
     exit 1
 fi
 
+# Check if rustc is installed
+if command -v rustc >/dev/null 2>&1; then
+    echo "Rust is already installed. Version: $(rustc --version)"
+else
+    echo "Rust is not installed. Installing Rust..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+    echo "Rust has been installed. Version: $(rustc --version)"
+fi
+
 echo "Updating Homebrew..."
 brew update
-packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin)
+packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin aws font-iosevka-nerd-font discord rekordbox chatgpt)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
