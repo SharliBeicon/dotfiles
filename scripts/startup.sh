@@ -22,7 +22,7 @@ fi
 
 echo "Updating Homebrew..."
 brew update
-packages=(stow alacritty zellij neovim zoxide thefuck fzf pnpm macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin aws font-iosevka-nerd-font discord rekordbox chatgpt)
+packages=(stow pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin font-iosevka-nerd-font discord rekordbox chatgpt)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
