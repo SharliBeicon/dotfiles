@@ -5,9 +5,13 @@ TARGET_DIR="$HOME"
 NVIM_CONFIG_REPO="git@github.com:SharliBeicon/nvBacon.git"
 NVIM_CONFIG_DIR="$DOTFILES_DIR/nvim/.config/nvim"
 
-if ! command -v brew &> /dev/null; then
-    echo "Homebrew is not installed. Please install Homebrew first."
-    exit 1
+if  command -v brew &> /dev/null; then
+    echo "Homebrew is already installed. Version: $(brew --version)"
+else
+    echo "Homebrew is not installed. Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    echo "Homebrew has been installed. Version: $(brew --version)"
 fi
 
 # Check if rustc is installed
@@ -22,7 +26,7 @@ fi
 
 echo "Updating Homebrew..."
 brew update
-packages=(stow pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin font-iosevka-nerd-font discord rekordbox chatgpt cmake protobuf docker)
+packages=(stow git gh pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin font-iosevka-nerd-font discord rekordbox chatgpt cmake protobuf docker awscli kubectl helm sops jq)
 
 is_installed() {
     brew list --formula | grep -q "^$1$"
