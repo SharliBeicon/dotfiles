@@ -21,6 +21,7 @@ alias ss="cd ~/Developer/DataBeacon/simplifid-scenarios/"
 alias vim="nvim"
 alias awslogin="aws sso login --sso-session Databeacon"
 alias ls="eza"
+alias zbr="zig build run"
 
 # proto
 export PROTO_HOME="$HOME/.proto";
@@ -56,3 +57,8 @@ source <(fzf --zsh)
 
 #Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Created by `pipx` on 2024-11-30 09:38:46
+export PATH="$PATH:/Users/charliebacon/.local/bin"
+
+export PATH="$PATH:/Users/charliebacon/.local/share/mise/shims"

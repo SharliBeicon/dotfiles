@@ -3,6 +3,11 @@ nickname = "sharlibeicon"
 server = "irc.oftc.net"
 channels = ["#asahi", "#asahi-dev", "#asahi-stream"]
 
+[servers.libera]
+nickname = "sharlibeicon"
+server = "irc.libera.chat"
+channels = ["#zig"]
+
 [font]
 family = "Iosevka Nerd Font"
 size = 16
