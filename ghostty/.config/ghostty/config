@@ -1,0 +1,10 @@
+command = /bin/zsh -l -c zellij
+
+background-opacity = 0.92
+theme = Kanagawa Wave
+cursor-style = block
+font-family = Iosevka Nerd Font
+title = " "
+font-size = 18
+window-width = 175
+window-height = 41
