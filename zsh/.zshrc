@@ -16,12 +16,12 @@ eval "$(pyenv init -)"
 alias db="cd ~/Developer/DataBeacon/"
 alias p="cd ~/Developer/Personal/"
 alias a="cd ~/Developer/DataBeacon/analytics/"
-alias s="cd ~/Developer/DataBeacon/simplifid/"
-alias ss="cd ~/Developer/DataBeacon/simplifid-scenarios/"
+
 alias vim="nvim"
 alias awslogin="aws sso login --sso-session Databeacon"
 alias ls="eza"
 alias zbr="zig build run"
+alias or="odin run ."
 
 # proto
 export PROTO_HOME="$HOME/.proto";

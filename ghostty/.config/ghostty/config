@@ -1,6 +1,6 @@
 command = /bin/zsh -l -c zellij
 
-background-opacity = 0.92
+background-opacity = 0.95
 theme = Kanagawa Wave
 cursor-style = block
 font-family = Iosevka Nerd Font
