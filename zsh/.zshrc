@@ -16,6 +16,7 @@ eval "$(pyenv init -)"
 alias db="cd ~/Developer/DataBeacon/"
 alias p="cd ~/Developer/Personal/"
 alias a="cd ~/Developer/DataBeacon/analytics/"
+alias t="cd ~/Developer/DataBeacon/tango5/"
 
 alias vim="nvim"
 alias awslogin="aws sso login --sso-session Databeacon"
@@ -62,3 +63,5 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="$PATH:/Users/charliebacon/.local/bin"
 
 export PATH="$PATH:/Users/charliebacon/.local/share/mise/shims"
+
+source "/Users/charliebacon/.secrets"
