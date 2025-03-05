@@ -57,9 +57,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Zig toolchain
-export PATH="$PATH:/Users/charliebacon/Developer/sources/zig/build/stage3/bin"
-
 # Zoxide
 eval "$(zoxide init zsh)"
 
