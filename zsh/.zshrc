@@ -6,6 +6,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Auto-switch node version using .nvmrc
+autoload -U add-zsh-hook
+add-zsh-hook chpwd use_nvmrc
+use_nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  fi
+}
+# Run on shell startup
+use_nvmrc
+
 # Python version manager
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/shims:$PATH"
@@ -46,6 +57,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Zig toolchain
+export PATH="$PATH:/Users/charliebacon/Developer/sources/zig/build/stage3"
+
 # Zoxide
 eval "$(zoxide init zsh)"
 
@@ -64,4 +78,14 @@ export PATH="$PATH:/Users/charliebacon/.local/bin"
 
 export PATH="$PATH:/Users/charliebacon/.local/share/mise/shims"
 
+export ANDROID_HOME="/Users/charliebacon/Library/Android/sdk"
 source "/Users/charliebacon/.secrets"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/charliebacon/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
