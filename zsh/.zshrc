@@ -14,7 +14,7 @@ use_nvmrc() {
     nvm use
   fi
 }
-# Run on shell startup
+
 use_nvmrc
 
 # Python version manager
@@ -39,8 +39,7 @@ alias or="odin run ."
 export PROTO_HOME="$HOME/.proto";
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 
-# rancher (docker) cli 
-export RANCHER_HOME="$HOME/.rd";
+
 export PATH="$RANCHER_HOME/bin:$PATH";
 
 # Cargo installs
@@ -56,6 +55,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Zig
+export PATH="$PATH:/Users/charliebacon/.zig"
 
 # Zoxide
 eval "$(zoxide init zsh)"
@@ -86,3 +88,5 @@ fpath=(/Users/charliebacon/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+export EMSDK_QUIET=1
