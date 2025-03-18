@@ -5,7 +5,7 @@ TARGET_DIR="$HOME"
 NVIM_CONFIG_REPO="git@github.com:SharliBeicon/nvBacon.git"
 NVIM_CONFIG_DIR="$DOTFILES_DIR/nvim/.config/nvim"
 
-if  command -v brew &> /dev/null; then
+if command -v brew &> /dev/null; then
     echo "Homebrew is already installed. Version: $(brew --version)"
 else
     echo "Homebrew is not installed. Installing Homebrew..."
@@ -26,18 +26,34 @@ fi
 
 echo "Updating Homebrew..."
 brew update
-packages=(stow git gh pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions alt-tab starship notion-calendar btop halloy wezterm yazi odin font-iosevka-nerd-font discord rekordbox chatgpt cmake protobuf docker awscli kubectl helm sops jq ffmpeg lazygit)
 
-is_installed() {
+formulas=(stow git gh pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions starship btop yazi odin cmake protobuf awscli kubectl helm sops jq ffmpeg lazygit zig ripgrep)
+casks=(notion-calendar discord docker ghostty font-iosevka-nerd-font zed whisky)
+
+is_formula_installed() {
     brew list --formula | grep -q "^$1$"
 }
 
-for package in "${packages[@]}"; do
-    if ! is_installed "$package"; then
-        echo "Installing $package..."
-        brew install "$package"
+is_cask_installed() {
+    brew list --cask | grep -q "^$1$"
+}
+
+# Install formulas
+for formula in "${formulas[@]}"; do
+    if ! is_formula_installed "$formula"; then
+        echo "Installing formula: $formula..."
+        brew install "$formula"
     else
-        echo "$package is already installed."
+        echo "Formula $formula is already installed."
+    fi
+done
+
+for cask in "${casks[@]}"; do
+    if ! is_cask_installed "$cask"; then
+        echo "Installing cask: $cask..."
+        brew install --cask "$cask"
+    else
+        echo "Cask $cask is already installed."
     fi
 done
 
