@@ -10,17 +10,18 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U add-zsh-hook
 add-zsh-hook chpwd use_nvmrc
 use_nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  fi
+    if [[ -f .nvmrc && -r .nvmrc ]]; then
+        nvm use
+    fi
 }
 
 use_nvmrc
 
-# Python version manager
+# Python vm
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 # Custom aliases
@@ -34,6 +35,7 @@ alias awslogin="aws sso login --sso-session Databeacon"
 alias ls="eza"
 alias zbr="zig build run"
 alias or="odin run ."
+alias rgf='rg --files | rg'
 
 # proto
 export PROTO_HOME="$HOME/.proto";
@@ -51,13 +53,10 @@ export PATH="$RANCHER_HOME/bin:$PATH";
 # pnpm
 export PNPM_HOME="/Users/charliebacon/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# Zig
-export PATH="$PATH:/Users/charliebacon/.zig"
 
 # Zoxide
 eval "$(zoxide init zsh)"
@@ -90,3 +89,4 @@ compinit
 # End of Docker CLI completions
 
 export EMSDK_QUIET=1
+

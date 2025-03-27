@@ -10,7 +10,7 @@ if command -v brew &> /dev/null; then
 else
     echo "Homebrew is not installed. Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
+
     echo "Homebrew has been installed. Version: $(brew --version)"
 fi
 
@@ -27,7 +27,7 @@ fi
 echo "Updating Homebrew..."
 brew update
 
-formulas=(stow git gh pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions starship btop yazi odin cmake protobuf awscli kubectl helm sops jq ffmpeg lazygit zig ripgrep)
+formulas=(stow git gh pyenv poetry nvm node eza zellij neovim zoxide thefuck fzf macchina zsh-autosuggestions starship btop yazi odin cmake protobuf awscli kubectl helm sops jq ffmpeg lazygit zig ripgrep uv)
 casks=(notion-calendar discord docker ghostty font-iosevka-nerd-font zed whisky)
 
 is_formula_installed() {
@@ -48,6 +48,7 @@ for formula in "${formulas[@]}"; do
     fi
 done
 
+# Install casks
 for cask in "${casks[@]}"; do
     if ! is_cask_installed "$cask"; then
         echo "Installing cask: $cask..."
