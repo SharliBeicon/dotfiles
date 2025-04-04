@@ -41,7 +41,6 @@ alias rgf='rg --files | rg'
 export PROTO_HOME="$HOME/.proto";
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 
-
 export PATH="$RANCHER_HOME/bin:$PATH";
 
 # Cargo installs
@@ -76,9 +75,6 @@ export PATH="$PATH:/Users/charliebacon/.local/bin"
 
 export PATH="$PATH:/Users/charliebacon/.local/share/mise/shims"
 
-export ANDROID_HOME="/Users/charliebacon/Library/Android/sdk"
-source "/Users/charliebacon/.secrets"
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -87,6 +83,3 @@ fpath=(/Users/charliebacon/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-
-export EMSDK_QUIET=1
-

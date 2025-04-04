@@ -2,7 +2,7 @@
 
 DOTFILES_DIR="$HOME/dotfiles"
 TARGET_DIR="$HOME"
-NVIM_CONFIG_REPO="git@github.com:SharliBeicon/nvBacon.git"
+NVIM_CONFIG_REPO="git@github.com:SharliBeicon/neoconfig.git"
 NVIM_CONFIG_DIR="$DOTFILES_DIR/nvim/.config/nvim"
 
 if command -v brew &> /dev/null; then
