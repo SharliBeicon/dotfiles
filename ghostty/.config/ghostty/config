@@ -1,4 +1,4 @@
-background-opacity = 0.98
+background-opacity = 1.0
 theme = Kanagawa Wave
 cursor-style = block
 shell-integration-features = no-cursor
